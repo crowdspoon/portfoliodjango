@@ -47,6 +47,7 @@
             </div>
         </div>
         <br>
+        <!-- experience knowledge -->
         <div class="row">
             <div class="col-md-6">
                 <div class="card card-body h-100">
@@ -68,6 +69,7 @@
             </div>
         </div>
         <br>
+        <!-- goals learn -->
         <div class="row">
             <div class="col-md-6">
                 <div class="card card-body h-100">
@@ -96,6 +98,36 @@
             </div>
         </div>
         <br>
+        {% if blog %}
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-8">My Projects</h1>
+            </div>
+        </div>
+        <!-- projects -->
+
+        <div class="row">
+            {% for projects in blog %}
+            <div class="col-md-3">
+                <div class="card card-body h-100">
+                    <h5>{{ projects.project_name }}</h5>
+                    <hr>
+                    <p>{{ projects.description}}</p>
+                    <hr>
+                    <div><a href="{{ projects.link_git }}"><button type="button" class="btn btn-primary">
+                                Github</button></a>
+                        <a href="{{ projects.link_demo }}"><button type="button" class="btn btn-primary">
+                                Demo</button></a></div>
+                </div><br>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% else %}
+
+
+        {% endif %}
+
     </div>
 
 </body>
